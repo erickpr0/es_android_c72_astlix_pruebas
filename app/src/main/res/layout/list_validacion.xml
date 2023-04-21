@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:padding="2dp"
+        android:background="@color/menu1p"
+        android:id="@+id/tagTv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/white" />
+
+    <TextView
+        android:padding="2dp"
+        android:background="@color/menu1p"
+        android:id="@+id/asciiTv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <com.astlix.es_android_c72_astlixpruebas.icons.FontAwesome
+        android:id="@+id/foundTv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/question_circle"
+        android:textColor="@color/faltante"
+        android:textSize="24sp" />
+
+</LinearLayout>

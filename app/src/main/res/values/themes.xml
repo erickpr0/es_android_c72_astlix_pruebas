@@ -1,0 +1,99 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LoginDialogTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/blanco</item>
+        <item name="colorAccent">@color/grisBut</item>
+        <item name="android:textColorHint">@color/grisBut</item>
+    </style>
+
+    <style name="alertDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="windowFixedWidthMajor">90%</item>
+        <item name="windowFixedWidthMinor">90%</item>
+    </style>
+
+    <style name="Transparent" parent="@android:style/Theme.NoTitleBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="MyEditTextStylemenu1p" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/menu1p</item>
+        <item name="colorControlNormal">@color/menu1p</item>
+    </style>
+
+    <style name="MyEditTextStylemenu2p" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/menu2p</item>
+        <item name="colorControlNormal">@color/menu2p</item>
+    </style>
+
+    <style name="MyEditTextStylemenu3p" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/menu3p</item>
+        <item name="colorControlNormal">@color/menu3p</item>
+    </style>
+
+    <style name="MyEditTextStylemenu4p" parent="Widget.AppCompat.EditText">
+        <item name="colorControlActivated">@color/menu4p</item>
+        <item name="colorControlNormal">@color/menu4p</item>
+    </style>
+
+    <style name="myDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">@color/menu1p</item>
+    </style>
+
+    <style name="ProgressBarmenu1p" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/menu1p</item>
+    </style>
+
+    <style name="ProgressBarmenu2p" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/menu2p</item>
+    </style>
+
+    <style name="ProgressBarmenu3p" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/menu3p</item>
+    </style>
+
+    <style name="ProgressBarmenu4p" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/menu4p</item>
+    </style>
+
+    <style name="ProgressBarLogin" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:indeterminateTint">@color/loginp</item>
+    </style>
+
+    <style name="MySwitchMenu2" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:colorControlActivated">@color/menu2p</item>
+    </style>
+
+    <style name="MySwitchMenu3" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:colorControlActivated">@color/menu3p</item>
+    </style>
+
+    <style name="MySwitchMenu4" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:colorControlActivated">@color/menu4p</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>

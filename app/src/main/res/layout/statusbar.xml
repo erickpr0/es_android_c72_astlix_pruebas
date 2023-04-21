@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="0dp"
+    android:layout_marginBottom="5dp">
+
+    <LinearLayout
+        android:layout_weight="4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textoMsg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/iniciando_lector_rfid"
+            android:textSize="18sp"
+            android:maxLines="1"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:textColor="@color/faltante"/>
+    </LinearLayout>
+
+    <com.astlix.es_android_c72_astlixpruebas.icons.FontAwesome
+        android:layout_marginStart="5dp"
+        android:id="@+id/iconoStatus"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/menu1_button_up"
+        android:textSize="18sp"
+        android:text="@string/exclamation_circle"
+        android:gravity="center"
+        android:textColor="@color/faltante"/>
+</LinearLayout>

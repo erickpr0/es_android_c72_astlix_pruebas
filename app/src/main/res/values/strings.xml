@@ -1,0 +1,145 @@
+<resources>
+
+    <string-array name="macs">
+        <item>6C:15:24:81:e1:d8</item>
+    </string-array>
+
+    <!-- App -->
+<!--    <string name="app_name">I\u2229TUI SLEEP</string>-->
+    <string name="app_name">Pruebas</string>
+    <!---->
+
+    <!-- Títulos menús -->
+    <string name="menu1Name">Validación</string>
+    <string name="menu2Name">Búsqueda</string>
+    <string name="menu3Name">Herramientas</string>
+    <string name="menu4Name">Configuración</string>
+    <!---->
+
+    <!-- Subtítulos menús-->
+    <string name="menu1SubInventario">Inventario</string>
+    <string name="menu1SubSalidas">Salidas</string>
+    <string name="menu1SubEntradas">Entradas</string>
+    <string name="menu1Colchon">Colchón</string>
+
+    <string name="menu2Total">Total</string>
+
+    <string name="menu3SubRfid">RFID</string>
+    <string name="menu3SubBc">Código de barras</string>
+    <string name="menu3header">Código:</string>
+    <!---->
+
+    <!-- Botones -->
+    <string name="butClean">LIMPIAR</string>
+    <string name="but_accept">ACEPTAR</string>
+    <string name="butCancelar">CANCELAR</string>
+    <string name="butSync">SINCRONIZAR</string>
+    <string name="butGuardar">GUARDAR</string>
+    <string name="butFin">FINALIZAR</string>
+    <string name="butInit">INICIAR</string>
+    <string name="butEnviar">ENVIAR</string>
+    <string name="butEntrar">ENTRAR</string>
+    <string name="butReiniciar">REINICIAR</string>
+    <string name="butSincronizarInventario">Sincronizar Inventario</string>
+
+    <!---->
+
+    <!-- BD -->
+    <string name="contrase_a_sql_server">Contraseña SQL Server</string>
+    <string name="usuario_sql_server">Usuario SQL Server</string>
+    <string name="base_de_datos_sql_server">Base de Datos SQL Server</string>
+    <string name="url_sql_server">URL SQL Server</string>
+    <!---->
+
+    <!-- About -->
+    <string name="imagen_astlix">Imagen Astlix</string>
+    <string name="astlix_url">https://www.astlix.com</string>
+    <string name="mail">soporte@astlix.com</string>
+    <string name="telefono">+52 (55) 1107 6245</string>
+    <string name="version">Versión 1.0</string>
+    <string name="logo_astlix">Astlix SA de CV</string>
+
+    <!-- Lectura -->
+    <string name="iniciando_lector_rfid">Iniciando Lector RFID</string>
+    <string name="epc">EPC</string>
+    <string name="sku">SKU</string>
+    <string name="rssi">Rssi</string>
+    <string name="hash">#</string>
+    <string name="estado">Estado</string>
+    <string name="leidos">Leídos</string>
+    <string name="detalle">Detalle</string>
+    <string name="correctos">Correctos</string>
+    <string name="faltantes">Faltantes</string>
+    <string name="sobrantes">Sobrantes</string>
+    <string name="esperados">Esperados</string>
+    <!---->
+
+    <!-- Potencia -->
+    <string name="potTit">Potencia</string>
+    <string name="potMsg">Establecer potencia</string>
+    <!---->
+
+    <!-- Errores -->
+    <string name="errThread">Error al iniciar Thread</string>
+    <string name="errInitBC">Error al iniciar Código de Barras</string>
+    <string name="errPswLen">La contraseña debe ser al menos de 5 caracteres </string>
+    <string name="errUsrDup">Usuarios duplicados</string>
+    <string name="errUsrRes">Usuario root reservado</string>
+    <string name="errBDdat">No se pueden obtener datos de la Base de Datos</string>
+    <string name="errArchTerm">El archivo de salida debe tener la terminación .xlsx</string>
+    <string name="errNoColumn">No se encontró la columna </string>
+    <string name="errIdDup">Id duplicado </string>
+    <string name="errFileNF">No se encontró el archivo</string>
+    <string name="errReadInpS">Error al leer archivo</string>
+    <string name="errPermisos">No se tienen los permisos</string>
+
+    <string name="errRfidFreq">Error al establecer frecuencia del lector</string>
+    <string name="errRfidInit">Error al iniciar lector RFID</string>
+    <string name="errRfidNotInit">El lector UHF no está inicializado</string>
+    <string name="errRfidInv">Error al iniciar inventario de tags</string>
+    <string name="errRfidNoTag">No hay tags cerca de la antena</string>
+    <string name="errRfidTagSize">La memoria del tag no es compatible</string>
+
+    <string name="errResp">Error de estructura de mensaje de respuesta del servidor</string>
+    <string name="errResp2">Error de status del servidor, no es un entero</string>
+    <string name="errResp3">Error de status, no es un valor esperado</string>
+
+    <string name="errEspLect">La cantidad de pares máxima es excedida por la cantidad de pares leídos</string>
+
+    <string name="errLecEmpt">No se encontró información de lectura para enviar</string>
+    <string name="errNoTrans">Número de transferencia vacío</string>
+    <string name="errRfidTagWrite">Error al grabar tag</string>
+
+    <string name="errSaveServer">No se encontraron cambios</string>
+    <string name="okSaveServer">Cambios guardados</string>
+
+    <string name="errEmtpyForm">Campos en formulario vacíos</string>
+    <string name="errIdErr">Error de id</string>
+
+    <string name="errCurrUsr">No se puede borrar al usuario activo</string>
+
+    <string name="msgBoxOk">Recepción correcta</string>
+    <string name="errBoxNOK">Recepción incompleta</string>
+    <string name="errBoxZero">No se ha realizado una lectura</string>
+
+    <string name="advBackPrs">Si continúa, no se guardará el progreso del armado de la caja</string>
+    <string name="advDelUsr">Si continúa, se borrará al usuario</string>
+
+    <string name="pregGuardar">¿Desea guardar los cambios del formulario?</string>
+
+    <string name="msgGuardado">Datos guardados</string>
+    <string name="zeroTxt">0</string>
+    <string name="msgPortOR">Puerto fuera de rango</string>
+
+    <!-- Usuario -->
+    <string name="usuario">Usuario:</string>
+    <string name="password">Contraseña:</string>
+    <string name="blank" />
+    <string name="idViaje">ID</string>
+    <string name="fecha">Fecha</string>
+    <string name="proveedor">Proveedor</string>
+    <string name="buscar">Buscar</string>
+    <string name="viaje">Viaje:</string>
+    <string name="oc">OC</string>
+    <string name="status">Status</string>
+</resources>
