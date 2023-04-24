@@ -80,7 +80,7 @@ public class RfidLecturasAdapter extends BaseAdapter {
         return lecturasRfidCiegas.size() == 0;
     }
 
-    public void exportarTags() {
+    public void exportarTags(String nombreArchivoExportar) {
         InterfazBD interfazBD = new InterfazBD(activity);
         int cont = 0;
         Log.d("EXPORTAR", "exportarTags: ");
@@ -120,8 +120,9 @@ public class RfidLecturasAdapter extends BaseAdapter {
         interfazBD.truncarTabla("tags");
 
         for (int i = 0; i < lecturasRfidCiegas.size(); i++) {
-            interfazBD.insertarTags(lecturasRfidCiegas.get(i), hexToAscii(lecturasRfidCiegas.get(i).getEpc()));
+            interfazBD.insertarTags(lecturasRfidCiegas.get(i), hexToAscii(lecturasRfidCiegas.get(i).getEpc()), nombreArchivoExportar);
         }
+        interfazBD.insertarArchivo(nombreArchivoExportar);
     }
 
     private static String hexToAscii(String hexStr) {

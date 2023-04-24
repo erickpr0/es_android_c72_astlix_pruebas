@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Log;
 
+import com.astlix.es_android_c72_astlixpruebas.model.Archivo;
 import com.astlix.es_android_c72_astlixpruebas.model.LecturasRfidCiega;
 
 import java.util.ArrayList;
@@ -134,7 +135,7 @@ public class InterfazBD {
         db.update("configuracion", content, "_id=1", null);
     }
 
-    public void insertarTags(LecturasRfidCiega lecturasRfidCiega, String ascii) {
+    public void insertarTags(LecturasRfidCiega lecturasRfidCiega, String ascii, String nombreArchivo) {
         ContentValues content;
         open();
 
@@ -143,15 +144,17 @@ public class InterfazBD {
         content.put("rssi", lecturasRfidCiega.getRssi());
         content.put("cantidad", lecturasRfidCiega.getCant());
         content.put("ascii", ascii);
+        content.put("archivo", nombreArchivo);
 
         db.insert("tags", null, content);
     }
 
-    public ArrayList<LecturasRfidCiega> obtenerTags() {
+    public ArrayList<LecturasRfidCiega> obtenerTags(String nombre) {
+        System.out.println("nombre en interfaz " + nombre);
         ArrayList<LecturasRfidCiega> tags = new ArrayList<>();
         open();
 
-        String consulta = "select tag, rssi, ascii from tags;";
+        String consulta = "select tag, rssi, ascii from tags where archivo = '"+nombre+"';";
 
         try {
             Cursor c = db.rawQuery(consulta, null);
@@ -166,5 +169,36 @@ public class InterfazBD {
             Log.d("Denver", e.getMessage());
         }
         return tags;
+    }
+
+    public ArrayList<Archivo> obtenerArchivos() {
+        ArrayList<Archivo> archivos = new ArrayList<>();
+        open();
+
+        String consulta = "select * from archivos;";
+
+        try {
+            Cursor c = db.rawQuery(consulta, null);
+            if (c.moveToFirst()) {
+                while (!c.isAfterLast()) {
+                    archivos.add(new Archivo(c.getInt(0), c.getString(1)));
+                    c.moveToNext();
+                }
+            }
+            c.close();
+        } catch (SQLiteException e) {
+            Log.d("Denver", e.getMessage());
+        }
+        return archivos;
+    }
+
+    public void insertarArchivo(String nombreArchivoExportar) {
+        ContentValues content;
+        open();
+
+        content = new ContentValues();
+        content.put("nombre", nombreArchivoExportar);
+
+        db.insert("archivos", null, content);
     }
 }

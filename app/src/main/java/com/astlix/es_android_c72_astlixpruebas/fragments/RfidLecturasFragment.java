@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -116,7 +117,19 @@ public class RfidLecturasFragment extends Fragment {
     }
 
     public void exportarTgas() {
-        System.out.println("TAGS");
-        rfidLecturasAdapter.exportarTags();
+        LayoutInflater li = LayoutInflater.from(RfidLecturasFragment.this.getContext());
+        View promptsView = li.inflate(R.layout.archivos_prompt_export, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(RfidLecturasFragment.this.getContext());
+        alertDialogBuilder.setView(promptsView);
+        EditText nombreArchivoEt = promptsView.findViewById(R.id.nombreET);
+
+        alertDialogBuilder.setPositiveButton("Confirmar", (dialog, which) -> {
+            rfidLecturasAdapter.exportarTags(nombreArchivoEt.getText().toString());
+        });
+
+        AlertDialog alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+
     }
 }
