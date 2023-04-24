@@ -13,9 +13,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_logo_astlix"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_logo_astlix_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="r">
@@ -51,6 +51,12 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".gui.Menu4ActivityAcerca"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".gui.Menu1ActivityArchivos"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait"

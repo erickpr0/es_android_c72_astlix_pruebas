@@ -1,6 +1,7 @@
 package com.astlix.es_android_c72_astlixpruebas.fragments;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +28,8 @@ import com.astlix.es_android_c72_astlixpruebas.model.LecturasRfidCiega;
 import com.astlix.es_android_c72_astlixpruebas.model.Resultado;
 
 import java.util.ArrayList;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class ValidacionFragment extends Fragment implements AdapterView.OnItemClickListener {
     ListView listView;
@@ -62,26 +66,43 @@ public class ValidacionFragment extends Fragment implements AdapterView.OnItemCl
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ValidacionFragment.this.getContext());
         alertDialogBuilder.setView(promptsView);
 
-        Spinner spinnerArchivo = promptsView.findViewById(R.id.spinnerArchivos);
         ArrayList<Archivo> archivos = interfazBD.obtenerArchivos();
-        SpinnerArchivosAdapter spinnerArchivosAdapter = new SpinnerArchivosAdapter(getActivity(), archivos);
-        spinnerArchivo.setAdapter(spinnerArchivosAdapter);
+        if (!archivos.isEmpty()){
+            Spinner spinnerArchivo = promptsView.findViewById(R.id.spinnerArchivos);
+            SpinnerArchivosAdapter spinnerArchivosAdapter = new SpinnerArchivosAdapter(getActivity(), archivos);
+            spinnerArchivo.setAdapter(spinnerArchivosAdapter);
 
-        alertDialogBuilder.setPositiveButton("Confirmar", (dialog, which) -> {
-            archivo = (Archivo) spinnerArchivo.getSelectedItem();
-            System.out.println(archivo.getNombre());
-            tags = interfazBD.obtenerTags(archivo.getNombre());
-            System.out.println(tags.size() + " size");
-            for (int i = 0; i < tags.size(); i++) {
-                System.out.println(tags.get(i).getEpc());
-            }
-            matchAdapter = new MatchAdapter(getActivity(), tags);
-            listView.setAdapter(matchAdapter);
-            esperados.setText(String.valueOf(tags.size()));
-        });
+            alertDialogBuilder.setPositiveButton("Confirmar", (dialog, which) -> {
+                archivo = (Archivo) spinnerArchivo.getSelectedItem();
+                tags = interfazBD.obtenerTags(archivo.getNombre());
+                for (int i = 0; i < tags.size(); i++) {
+                    System.out.println(tags.get(i).getEpc());
+                }
+                matchAdapter = new MatchAdapter(getActivity(), tags);
+                listView.setAdapter(matchAdapter);
+                esperados.setText(String.valueOf(tags.size()));
+            });
 
-        AlertDialog alertDialog = alertDialogBuilder.create();
-        alertDialog.show();
+            alertDialogBuilder.setNegativeButton("Cancelar", (dialog, which) -> {
+                dialog.dismiss();
+                requireActivity().finish();
+            });
+            alertDialogBuilder.setCancelable(false);
+
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+
+            alertDialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(requireActivity(), R.color.sobrante));
+            alertDialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(requireActivity(), R.color.bien));
+        } else {
+            new StyleableToast.Builder(requireActivity())
+                    .text("No hay archivos")
+                    .textColor(ContextCompat.getColor(requireActivity(), R.color.white))
+                    .textBold()
+                    .backgroundColor(ContextCompat.getColor(requireActivity(), R.color.faltante))
+                    .length(Toast.LENGTH_LONG)
+                    .show();
+        }
     }
 
     public void clearList() {

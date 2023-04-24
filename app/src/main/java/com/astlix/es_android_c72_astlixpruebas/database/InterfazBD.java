@@ -154,7 +154,7 @@ public class InterfazBD {
         ArrayList<LecturasRfidCiega> tags = new ArrayList<>();
         open();
 
-        String consulta = "select tag, rssi, ascii from tags where archivo = '"+nombre+"';";
+        String consulta = "select tag, rssi, ascii from tags where archivo = '" + nombre + "';";
 
         try {
             Cursor c = db.rawQuery(consulta, null);
@@ -200,5 +200,15 @@ public class InterfazBD {
         content.put("nombre", nombreArchivoExportar);
 
         db.insert("archivos", null, content);
+    }
+
+    public void eliminarArchivo(String nombre) {
+        String query = "DELETE FROM archivos where nombre = '"+ nombre +"';";
+        db.execSQL(query);
+    }
+
+    public void eliminarTags(String nombre) {
+        String query = "DELETE FROM tags where archivo = '"+ nombre +"';";
+        db.execSQL(query);
     }
 }

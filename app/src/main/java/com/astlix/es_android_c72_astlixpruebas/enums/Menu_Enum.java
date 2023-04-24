@@ -6,6 +6,7 @@ import com.astlix.es_android_c72_astlixpruebas.model.Permisos;
 public enum Menu_Enum {
     inicio(-1, "START", R.string.info_circle, "Start", 0, 0, false, MenuStyle_Enum.start, Permisos.todos, R.color.menu1to),
     validacion(0, "Validación", R.string.check_square, "Menu1ActivityValidacion", 13, 1, false, MenuStyle_Enum.button1, Permisos.entradas, R.color.menu1to),
+    archivos(0, "Archivos", R.string.file, "Menu1ActivityArchivos", 13, 1, false, MenuStyle_Enum.button1, Permisos.entradas, R.color.menu1to),
     //busqueda(0, "Búsqueda", R.string.search, "Menu2ActivityBusqueda", 13, 1, false, MenuStyle_Enum.button1, Permisos.entradas, R.color.menu1to),
     rfid(2, "RFID", R.string.wifi, "Menu3RfidActivity", 0, 0, false, MenuStyle_Enum.button3, Permisos.todos, R.color.menu3to),
     barcode(2, "Código de Barras", R.string.barcode, "Menu3ActivityBarCode", 0, 0, false, MenuStyle_Enum.button3, Permisos.todos, R.color.menu3to),

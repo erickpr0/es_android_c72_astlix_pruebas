@@ -128,7 +128,10 @@ public class RfidLecturasFragment extends Fragment {
             rfidLecturasAdapter.exportarTags(nombreArchivoEt.getText().toString());
         });
 
+        alertDialogBuilder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+
         AlertDialog alertDialog = alertDialogBuilder.create();
+
         alertDialog.show();
 
     }

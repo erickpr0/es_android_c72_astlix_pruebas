@@ -4,8 +4,10 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.astlix.es_android_c72_astlixpruebas.R;
@@ -20,6 +22,8 @@ import com.astlix.es_android_c72_astlixpruebas.fragments.ValidacionFragment;
 import com.astlix.es_android_c72_astlixpruebas.model.Resultado;
 
 import java.util.ArrayList;
+
+import io.github.muddz.styleabletoast.StyleableToast;
 
 public class Menu1ActivityValidacion extends RFIDControllActivity {
     FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -80,9 +84,20 @@ public class Menu1ActivityValidacion extends RFIDControllActivity {
 
         if (transaction.isEmpty()) {
             transaction.add(R.id.headerFragment, headerFragment);
-            transaction.add(R.id.contenidoFragment, validacionFragment);
-            transaction.add(R.id.controlsFragment, controlsFragment);
-            transaction.add(R.id.statusbarFragment, statusbarFragment).commit();
+            if (!interfazBD.obtenerArchivos().isEmpty()){
+                transaction.add(R.id.contenidoFragment, validacionFragment);
+                transaction.add(R.id.controlsFragment, controlsFragment);
+                transaction.add(R.id.statusbarFragment, statusbarFragment).commit();
+            } else {
+                new StyleableToast.Builder(this)
+                        .text("No hay archivos")
+                        .textColor(ContextCompat.getColor(this, R.color.white))
+                        .textBold()
+                        .backgroundColor(ContextCompat.getColor(this, R.color.faltante))
+                        .length(Toast.LENGTH_LONG)
+                        .show();
+                finish();
+            }
         } else {
             transaction = null;
             transaction = getSupportFragmentManager().beginTransaction();
